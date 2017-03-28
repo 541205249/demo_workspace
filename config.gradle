@@ -1,0 +1,13 @@
+ext{
+    android = [
+            compileSdkVersion: 23,
+            buildToolsVersion: "25.0.0",
+            minSdkVersion    : 23,
+            targetSdkVersion : 23,
+    ]
+
+    dependencies = [
+//            "System_Ui_Widget"     : 'systemui:Widget2:1.0',
+//            "Out_EventBus"          : 'org.greenrobot:eventbus:3.0.0',
+    ]
+}

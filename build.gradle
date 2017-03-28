@@ -1,0 +1,18 @@
+// 公共配置
+apply from:"config.gradle"
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.0'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    }
+}

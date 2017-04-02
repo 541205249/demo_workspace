@@ -60,10 +60,12 @@ public class ContactsCustomAdapter extends BaseAdapter {
         TextView idTv = (TextView) view.findViewById(R.id.tv_id);
         TextView nameTv = (TextView) view.findViewById(R.id.tv_name);
         TextView numberTv = (TextView) view.findViewById(R.id.tv_number);
+        TextView letterTv = (TextView) view.findViewById(R.id.tv_letter);
 
         idTv.setText(String.valueOf(contact.getId()));
         nameTv.setText(contact.getName());
         numberTv.setText(contact.getNumber());
+        letterTv.setText(contact.getLetter());
 
         return view;
     }

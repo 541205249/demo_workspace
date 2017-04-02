@@ -30,10 +30,10 @@ public class MainActivity extends Activity implements OnItemClickListener {
         mRecycleAdapter.setOnItemClickListener(this);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.id_recyclerView);
         recyclerView.setAdapter(mRecycleAdapter);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setLayoutManager(new GridLayoutManager(this,4));
-//        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.HORIZONTAL));
         recyclerView.addItemDecoration(new DividerGridItemDecoration(this));
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));  //列表布局
+        recyclerView.setLayoutManager(new GridLayoutManager(this,4));  //网格布局
+//        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.HORIZONTAL));  //  流式布局
 
 //        recyclerView.setItemAnimator(new SlideInOutLeftItemAnimator(recyclerView));
         //一个好用的动画库

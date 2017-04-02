@@ -10,6 +10,7 @@ public class ContactEntry {
     private int id;
     private String name;
     private String number;
+    private String letter;
 
     public int getId() {
         return id;
@@ -33,5 +34,13 @@ public class ContactEntry {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public String getLetter() {
+        return letter;
+    }
+
+    public void setLetter(String letter) {
+        this.letter = letter;
     }
 }

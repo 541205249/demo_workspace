@@ -92,7 +92,7 @@ public class CustomContactLoader extends AsyncTaskLoader<List<ContactEntry>> {
     private List<ContactEntry> queryContacts() {
         Cursor cursor = getContext().getContentResolver().query(
                 ContactsContract.Contacts.CONTENT_URI,
-                Contant.CONTACTS_PROJECTION,
+                Constant.CONTACTS_PROJECTION,
                 null,
                 null,
                 ContactsContract.Contacts.SORT_KEY_PRIMARY);
@@ -107,6 +107,7 @@ public class CustomContactLoader extends AsyncTaskLoader<List<ContactEntry>> {
             contactEntry.setId(cursor.getInt(0));
             contactEntry.setName(cursor.getString(1));
             contactEntry.setNumber(cursor.getString(2));
+            contactEntry.setLetter(cursor.getString(3));
 
             contactEntryList.add(contactEntry);
         }

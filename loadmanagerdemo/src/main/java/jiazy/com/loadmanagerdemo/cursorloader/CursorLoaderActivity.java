@@ -11,7 +11,7 @@ import android.widget.ListView;
 
 import jiazy.com.loadmanagerdemo.R;
 
-import static jiazy.com.loadmanagerdemo.customloader.Contant.CONTACTS_PROJECTION;
+import static jiazy.com.loadmanagerdemo.customloader.Constant.CONTACTS_PROJECTION;
 
 public class CursorLoaderActivity extends Activity implements LoaderManager.LoaderCallbacks<Cursor> {
 

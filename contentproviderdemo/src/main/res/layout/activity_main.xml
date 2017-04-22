@@ -8,19 +8,22 @@
         android:id="@+id/btn_insert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="插入一条数据" />
+        android:text="插入一条数据"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/btn_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="删除一条数据" />
+        android:text="删除一条数据"
+        android:onClick="onClick"/>
 
     <Button
         android:id="@+id/btn_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="插入一条数据" />
+        android:text="修改一条数据（修改入表时间）"
+        android:onClick="onClick"/>
 
     <ListView
         android:id="@+id/list_view"

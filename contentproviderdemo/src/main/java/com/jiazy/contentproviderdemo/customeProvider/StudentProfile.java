@@ -1,4 +1,4 @@
-package com.jiazy.contentproviderdemo;
+package com.jiazy.contentproviderdemo.customeProvider;
 
 import android.net.Uri;
 import android.provider.BaseColumns;
@@ -14,7 +14,7 @@ public class StudentProfile {
     /**
      * 一般来说 我们的authority都是设置成 我们这个常量类的包名+类名
      */
-    public static final String AUTHORITY = "com.example.providertest.StudentProfile";
+    public static final String AUTHORITY = "com.jiazy.contentproviderdemo.customeProvider.StudentProfile";
 
     /**
      * 注意这个构造函数 是私有的 目的就是让他不能被初始化
@@ -54,8 +54,7 @@ public class StudentProfile {
         public static final int STUDENT_ID_PATH_POSITION = 1;
 
         // 这个表的基本的uri格式
-        public static final Uri CONTENT_URI = Uri.parse(SCHEME + AUTHORITY
-                + PATH_STUDENTS);
+        public static final Uri CONTENT_URI = Uri.parse(SCHEME + AUTHORITY + PATH_STUDENTS);
         // 某一条数据的基本uri格式 这个通常在自定義的provider的insert方法里面被调用
         public static final Uri CONTENT_ID_URI_BASE = Uri.parse(SCHEME
                 + AUTHORITY + PATH_STUDENTS_ID);
@@ -67,9 +66,9 @@ public class StudentProfile {
          */
 
         // 多行的mime类型
-        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/vnd.com.example.providertest.students";
+        public static final String CONTENT_TYPE = "vnd.android.cursor.dir/vnd.com.jiazy.contentproviderdemo.students";
         // 单行的mime类型
-        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd.google.com.example.providertest.students";
+        public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/vnd.com.jiazy.contentproviderdemo.students";
 
         /**
          * 既然provider提供了查询的方法 我们肯定要设置一个默认的排序方式 这里我们就默认让他根据创建的时间 来降序排序

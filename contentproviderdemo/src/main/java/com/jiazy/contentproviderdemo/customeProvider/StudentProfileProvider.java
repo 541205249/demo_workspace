@@ -1,4 +1,4 @@
-package com.jiazy.contentproviderdemo;
+package com.jiazy.contentproviderdemo.customeProvider;
 
 import android.content.ContentProvider;
 import android.content.ContentUris;

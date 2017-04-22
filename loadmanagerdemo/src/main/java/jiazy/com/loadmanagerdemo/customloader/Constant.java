@@ -15,5 +15,6 @@ public class Constant {
             Contacts.DISPLAY_NAME_PRIMARY,          // 1
             "first_phone_number",                   // 2
             "phonebook_label",                      // 3
+            Contacts.PHOTO_THUMBNAIL_URI
     };
 }

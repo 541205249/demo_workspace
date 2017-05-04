@@ -8,6 +8,10 @@ import android.provider.ContactsContract;
 import java.util.ArrayList;
 import java.util.List;
 
+import hugo.weaving.DebugLog;
+
+import static jiazy.com.loadmanagerdemo.customloader.Constant.CONTACTS_PROJECTION;
+
 /**
  * 作者： jiazy
  * 日期： 2017/3/25.
@@ -89,10 +93,11 @@ public class CustomContactLoader extends AsyncTaskLoader<List<ContactEntry>> {
         }
     }
 
+    @DebugLog
     private List<ContactEntry> queryContacts() {
         Cursor cursor = getContext().getContentResolver().query(
                 ContactsContract.Contacts.CONTENT_URI,
-                Constant.CONTACTS_PROJECTION,
+                null/*Constant.CONTACTS_PROJECTION*/,
                 null,
                 null,
                 ContactsContract.Contacts.SORT_KEY_PRIMARY);
@@ -104,10 +109,10 @@ public class CustomContactLoader extends AsyncTaskLoader<List<ContactEntry>> {
         List<ContactEntry> contactEntryList = new ArrayList<>();
         while (cursor.moveToNext()) {
             ContactEntry contactEntry = new ContactEntry();
-            contactEntry.setId(cursor.getInt(0));
-            contactEntry.setName(cursor.getString(1));
-            contactEntry.setNumber(cursor.getString(2));
-            contactEntry.setLetter(cursor.getString(3));
+            contactEntry.setId(cursor.getInt(cursor.getColumnIndex(CONTACTS_PROJECTION[0])));
+            contactEntry.setName(cursor.getString(cursor.getColumnIndex(CONTACTS_PROJECTION[1])));
+            contactEntry.setNumber(cursor.getString(cursor.getColumnIndex(CONTACTS_PROJECTION[2])));
+            contactEntry.setLetter(cursor.getString(cursor.getColumnIndex(CONTACTS_PROJECTION[3])));
 
             contactEntryList.add(contactEntry);
         }

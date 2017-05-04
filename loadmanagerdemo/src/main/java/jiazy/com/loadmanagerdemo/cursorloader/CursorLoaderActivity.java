@@ -7,6 +7,7 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.util.Log;
 import android.widget.ListView;
 
 import jiazy.com.loadmanagerdemo.R;
@@ -43,6 +44,7 @@ public class CursorLoaderActivity extends Activity implements LoaderManager.Load
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
+        Log.i(null, "数据加载完成 共计" + data.getCount() + "条记录" + "，" + data.getColumnCount());
         mAdapter.swapCursor(data);
     }
 

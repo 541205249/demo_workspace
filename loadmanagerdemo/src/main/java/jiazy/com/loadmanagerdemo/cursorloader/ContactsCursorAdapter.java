@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import jiazy.com.loadmanagerdemo.R;
 
+import static jiazy.com.loadmanagerdemo.customloader.Constant.CONTACTS_PROJECTION;
+
 /**
  * 作者： jiazy
  * 日期： 2017/3/25.
@@ -36,9 +38,9 @@ public class ContactsCursorAdapter extends CursorAdapter {
     public void bindView(View view, Context context, Cursor cursor) {
         if (cursor == null)
             return;
-        final int contactId = cursor.getInt(0);
-        String name = cursor.getString(1);
-        String number = cursor.getString(2);
+        final int contactId = cursor.getInt(cursor.getColumnIndex(CONTACTS_PROJECTION[0]));
+        String name = cursor.getString(cursor.getColumnIndex(CONTACTS_PROJECTION[1]));
+        String number = cursor.getString(cursor.getColumnIndex(CONTACTS_PROJECTION[2]));
 
         TextView contactIdTv = (TextView) view.findViewById(R.id.tv_id);
         contactIdTv.setText(String.valueOf(contactId));

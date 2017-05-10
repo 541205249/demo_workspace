@@ -1,1 +1,1 @@
-include ':applicationinflatedemo', ':strictmodedemo', ':mvvmdemo', ':loadmanagerdemo', ':applistloaderdemo', ':recycleviewdemo', ':genericdemo', ':fragmentlifecycledemo', ':refactordemo', ':contentproviderdemo'
+include ':applicationinflatedemo', ':strictmodedemo', ':mvvmdemo', ':loadmanagerdemo', ':applistloaderdemo', ':recycleviewdemo', ':genericdemo', ':fragmentlifecycledemo', ':refactordemo', ':contentproviderdemo', ':utilsdemo'

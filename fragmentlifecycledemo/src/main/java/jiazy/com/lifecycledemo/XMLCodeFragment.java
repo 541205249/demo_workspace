@@ -140,11 +140,11 @@ public class XMLCodeFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    @Override
+    /*@Override
     public void onAttachFragment(Fragment childFragment) {
         Log.i("jzy-XMLCode", "onAttachFragment");
         super.onAttachFragment(childFragment);
-    }
+    }*/
 
     @Override
     public void onHiddenChanged(boolean hidden) {
@@ -158,11 +158,11 @@ public class XMLCodeFragment extends Fragment {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
-    @Override
+    /*@Override
     public void onMultiWindowModeChanged(boolean isInMultiWindowMode) {
         Log.i("jzy-XMLCode", "onMultiWindowModeChanged");
         super.onMultiWindowModeChanged(isInMultiWindowMode);
-    }
+    }*/
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {

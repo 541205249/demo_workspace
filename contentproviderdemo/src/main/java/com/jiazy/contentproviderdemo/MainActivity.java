@@ -6,7 +6,6 @@ import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.CursorLoader;
 import android.content.Loader;
-import android.content.UriMatcher;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -51,10 +50,11 @@ public class MainActivity extends Activity implements View.OnClickListener, Load
                 contentValues.put(StudentProfile.Students.COLUMN_NAME_NUMBER, "001");
                 contentValues.put(StudentProfile.Students.COLUMN_NAME_CREATE_DATE, System.currentTimeMillis());
                 contentValues.put(StudentProfile.Students.COLUMN_NAME_MODIFICATION_DATE, System.currentTimeMillis());
-                mContentResolver.insert(StudentProfile.Students.CONTENT_URI, contentValues);
+                mContentResolver.insert(StudentProfile.Students.CONTENT_ID_URI_BASE, contentValues);
                 break;
             case R.id.btn_delete:
-//                mContentResolver.delete(StudentProfile.Students.CONTENT_URI, );
+                mContentResolver.delete(StudentProfile.Students.CONTENT_URI, StudentProfile.Students.COLUMN_NAME_AGE, new String[]{"18"});
+
                 break;
             case R.id.btn_update:
 //                ContentValues contentValues = new ContentValues();

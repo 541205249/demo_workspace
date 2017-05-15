@@ -14,7 +14,7 @@ public class StudentProfile {
     /**
      * 一般来说 我们的authority都是设置成 我们这个常量类的包名+类名
      */
-    public static final String AUTHORITY = "com.jiazy.contentproviderdemo.customeProvider.StudentProfile";
+    public static final String AUTHORITY = "com.jiazy.contentproviderdemo.customeProvider.StudentProfileProvider";
 
     /**
      * 注意这个构造函数 是私有的 目的就是让他不能被初始化

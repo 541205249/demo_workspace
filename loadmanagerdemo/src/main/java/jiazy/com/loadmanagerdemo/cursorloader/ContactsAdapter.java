@@ -18,13 +18,13 @@ import static jiazy.com.loadmanagerdemo.customloader.Constant.CONTACTS_PROJECTIO
  * 公司： 步步高教育电子有限公司
  */
 
-public class ContactsCursorAdapter extends CursorAdapter {
+public class ContactsAdapter extends CursorAdapter {
 
-    public ContactsCursorAdapter(Context context) {
+    public ContactsAdapter(Context context) {
         this(context, null, true);
     }
 
-    public ContactsCursorAdapter(Context context, Cursor c, boolean autoRequery) {
+    public ContactsAdapter(Context context, Cursor c, boolean autoRequery) {
         super(context, c, autoRequery);
     }
 

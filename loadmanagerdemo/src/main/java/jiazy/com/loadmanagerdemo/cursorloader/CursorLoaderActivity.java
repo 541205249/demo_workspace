@@ -16,19 +16,20 @@ import static jiazy.com.loadmanagerdemo.customloader.Constant.CONTACTS_PROJECTIO
 
 public class CursorLoaderActivity extends Activity implements LoaderManager.LoaderCallbacks<Cursor> {
 
-    private ContactsCursorAdapter mAdapter;
+    private ContactsAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cursor_loader);
-        initWidgets();
+
+        initViews();
         initLoaderManager();
     }
 
-    private void initWidgets() {
+    private void initViews() {
         ListView mListView = (ListView) findViewById(R.id.lv_list);
-        mAdapter = new ContactsCursorAdapter(getApplicationContext());
+        mAdapter = new ContactsAdapter(getApplicationContext());
         mListView.setAdapter(mAdapter);
     }
 

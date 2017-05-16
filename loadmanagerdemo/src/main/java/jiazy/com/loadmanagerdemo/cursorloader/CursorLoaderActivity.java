@@ -12,9 +12,11 @@ import android.widget.ListView;
 
 import jiazy.com.loadmanagerdemo.R;
 
+import static jiazy.com.loadmanagerdemo.MainActivity.TAG;
 import static jiazy.com.loadmanagerdemo.customloader.Constant.CONTACTS_PROJECTION;
 
-public class CursorLoaderActivity extends Activity implements LoaderManager.LoaderCallbacks<Cursor> {
+public class CursorLoaderActivity extends Activity
+        implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private ContactsAdapter mAdapter;
 
@@ -45,7 +47,7 @@ public class CursorLoaderActivity extends Activity implements LoaderManager.Load
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
-        Log.i(null, "数据加载完成 共计" + data.getCount() + "条记录" + "，" + data.getColumnCount());
+        Log.i(TAG, "数据加载完成 共计" + data.getCount() + "条记录" + "，" + data.getColumnCount());
         mAdapter.swapCursor(data);
     }
 

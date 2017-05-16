@@ -45,16 +45,6 @@ public class RecyclerViewActivity extends Activity  implements LoaderManager.Loa
     }
 
     @Override
-    public void onItemClick(View view, int position) {
-        Toast.makeText(getApplicationContext(), "onItemClick=" + position, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onItemLongClick(View view, int position) {
-        Toast.makeText(getApplicationContext(), "onItemLongClick=" + position, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
     public Loader<List<ContactEntry>> onCreateLoader(int id, Bundle args) {
         return new CustomContactLoader(getApplicationContext());
     }
@@ -67,5 +57,15 @@ public class RecyclerViewActivity extends Activity  implements LoaderManager.Loa
     @Override
     public void onLoaderReset(Loader<List<ContactEntry>> loader) {
         mRecycleAdapter.setContactList(null);
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+        Toast.makeText(getApplicationContext(), "onItemClick=" + position, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onItemLongClick(View view, int position) {
+        Toast.makeText(getApplicationContext(), "onItemLongClick=" + position, Toast.LENGTH_SHORT).show();
     }
 }

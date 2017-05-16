@@ -1,9 +1,9 @@
 package jiazy.com.applistloaderdemo.loader;
 
+import android.content.AsyncTaskLoader;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.support.v4.content.AsyncTaskLoader;
 import android.util.Log;
 
 import java.text.Collator;

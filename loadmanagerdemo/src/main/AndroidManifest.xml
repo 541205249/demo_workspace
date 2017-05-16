@@ -21,8 +21,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".cursorloader.CursorLoaderActivity" />
+        <activity android:name=".cursorloader.ListFragmentCursorLoaderActivity" />
         <activity android:name=".customloader.CustomLoaderActivity" />
         <activity android:name=".recyclerviewcustomloader.RecyclerViewActivity" />
+
     </application>
 
 </manifest>

@@ -1,11 +1,15 @@
 package jiazy.com.loadmanagerdemo;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.view.View;
 
 import jiazy.com.loadmanagerdemo.cursorloader.CursorLoaderActivity;
+import jiazy.com.loadmanagerdemo.cursorloader.ListFragmentCursorLoaderActivity;
 import jiazy.com.loadmanagerdemo.customloader.CustomLoaderActivity;
 import jiazy.com.loadmanagerdemo.recyclerviewcustomloader.RecyclerViewActivity;
 
@@ -17,10 +21,15 @@ import jiazy.com.loadmanagerdemo.recyclerviewcustomloader.RecyclerViewActivity;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
+    public static final String TAG = "tag_loadmanagerdemo";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_CONTACTS}, 0);
+        }
     }
 
     @Override
@@ -28,6 +37,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.cursorLoaderBtn:
                 startActivity(new Intent(this, CursorLoaderActivity.class));
+                break;
+            case R.id.cursorLoaderListFragmentBtn:
+                startActivity(new Intent(this, ListFragmentCursorLoaderActivity.class));
                 break;
             case R.id.customLoaderBtn:
                 startActivity(new Intent(this, CustomLoaderActivity.class));

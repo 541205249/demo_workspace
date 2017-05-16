@@ -12,6 +12,13 @@
         android:text="cursorLoader"/>
 
     <Button
+        android:id="@+id/cursorLoaderListFragmentBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="cursorLoaderListFragment"/>
+
+    <Button
         android:id="@+id/customLoaderBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

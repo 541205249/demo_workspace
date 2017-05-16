@@ -48,26 +48,36 @@ public class ContactsCustomAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view;
-
-        if (convertView == null) {
-            view = mInflater.inflate(R.layout.listview_item, parent, false);
-        } else {
-            view = convertView;
+        ViewHolder viewHolder;
+        if(convertView == null){
+            convertView = mInflater.inflate(R.layout.listview_item, parent, false);
+            viewHolder = new ViewHolder(convertView);
+            convertView.setTag(viewHolder);
+        }else {
+            viewHolder = (ViewHolder)convertView.getTag();
         }
 
         ContactEntry contact = (ContactEntry) getItem(position);
-        TextView idTv = (TextView) view.findViewById(R.id.tv_id);
-        TextView nameTv = (TextView) view.findViewById(R.id.tv_name);
-        TextView numberTv = (TextView) view.findViewById(R.id.tv_number);
-        TextView letterTv = (TextView) view.findViewById(R.id.tv_letter);
 
-        idTv.setText(String.valueOf(contact.getId()));
-        nameTv.setText(contact.getName());
-        numberTv.setText(contact.getNumber());
-        letterTv.setText(contact.getLetter());
+        viewHolder.idTv.setText(String.valueOf(contact.getId()));
+        viewHolder.nameTv.setText(contact.getName());
+        viewHolder.numberTv.setText(contact.getNumber());
+        viewHolder.letterTv.setText(contact.getLetter());
 
-        return view;
+        return convertView;
     }
 
+    private class ViewHolder {
+        TextView idTv;
+        TextView nameTv;
+        TextView numberTv;
+        TextView letterTv;
+
+        ViewHolder(View view) {
+            idTv = (TextView) view.findViewById(R.id.tv_id);
+            nameTv = (TextView) view.findViewById(R.id.tv_name);
+            numberTv = (TextView) view.findViewById(R.id.tv_number);
+            letterTv = (TextView) view.findViewById(R.id.tv_letter);
+        }
+    }
 }

@@ -4,12 +4,14 @@ import android.content.AsyncTaskLoader;
 import android.content.Context;
 import android.database.Cursor;
 import android.provider.ContactsContract;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import hugo.weaving.DebugLog;
 
+import static jiazy.com.loadmanagerdemo.MainActivity.TAG;
 import static jiazy.com.loadmanagerdemo.customloader.Constant.CONTACTS_PROJECTION;
 
 /**
@@ -36,6 +38,7 @@ public class CustomContactLoader extends AsyncTaskLoader<List<ContactEntry>> {
 
     @Override
     public List<ContactEntry> loadInBackground() {
+        Log.i(TAG, "loadInBackground");
         return queryContacts();
     }
 
@@ -63,6 +66,7 @@ public class CustomContactLoader extends AsyncTaskLoader<List<ContactEntry>> {
         if (mData != null) {
             deliverResult(mData);
         }
+
         if (takeContentChanged() || mData == null) {
             forceLoad();
         }
@@ -97,7 +101,7 @@ public class CustomContactLoader extends AsyncTaskLoader<List<ContactEntry>> {
     private List<ContactEntry> queryContacts() {
         Cursor cursor = getContext().getContentResolver().query(
                 ContactsContract.Contacts.CONTENT_URI,
-                null/*Constant.CONTACTS_PROJECTION*/,
+                Constant.CONTACTS_PROJECTION,
                 null,
                 null,
                 ContactsContract.Contacts.SORT_KEY_PRIMARY);
